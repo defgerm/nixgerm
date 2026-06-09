@@ -15,7 +15,6 @@
     chromium
     fastfetch
     kitty
-    rofi
     swww
     dunst
     waybar
@@ -29,6 +28,20 @@
     nodejs
     lua-language-server
   ];
+
+  xdg.configFile = {
+    "hypr/hyprland.lua".source = ./dotfiles/hypr/hyprland.lua;
+    "kitty/kitty.conf".source            = ./dotfiles/kitty/kitty.conf;
+    "kitty/GruvBox_DarkHard.conf".source = ./dotfiles/kitty/GruvBox_DarkHard.conf;
+    "nvim/init.lua".source                   = ./dotfiles/nvim/init.lua;
+    "nvim/lua/config/lazy.lua".source        = ./dotfiles/nvim/lua/config/lazy.lua;
+    "nvim/lua/plugins/lsp.lua".source        = ./dotfiles/nvim/lua/plugins/lsp.lua;
+  };
+
+  programs.rofi = {
+    enable = true;
+    theme = "solarized_alternate";
+  };
 
   home.pointerCursor = {
     gtk.enable = true;
