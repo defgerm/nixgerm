@@ -23,7 +23,7 @@ hl.monitor({
 local terminal    = "kitty"
 local browser     = "chromium"
 local fileManager = "nautilus"
-local menu        = "rofi -show drun"
+local menu        = "walker"
 
 
 -------------------
@@ -33,6 +33,7 @@ local menu        = "rofi -show drun"
 hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon && awww img ~/.config/walls/eva.png")
     hl.exec_cmd("dunst")
+    hl.exec_cmd("hypridle")
 end)
 
 
@@ -175,6 +176,7 @@ hl.device({
 
 local mainMod = "SUPER"
 
+hl.bind(mainMod .. " + L",      hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("kitty -e sudo nixos-rebuild switch --flake /etc/nixos#nixos"))
 hl.bind(mainMod .. " + W",      hl.dsp.window.close())

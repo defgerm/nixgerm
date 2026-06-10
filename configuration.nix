@@ -58,7 +58,7 @@
   nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
+    nerd-fonts.sauce-code-pro
   ];
 
   environment.systemPackages = with pkgs; [
