@@ -7,13 +7,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, walker, ... }: {
+  outputs = { self, nixpkgs, home-manager, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -22,7 +18,6 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.sharedModules = [ walker.homeManagerModules.walker ];
           home-manager.users.jester = import ./home.nix;
         }
       ];

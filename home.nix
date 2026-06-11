@@ -24,6 +24,7 @@
     playerctl
     hyprlock
     hypridle
+    obsidian
     # neovim deps
     gcc
     ripgrep
@@ -42,76 +43,17 @@
     "nvim/lua/config/lazy.lua".source        = ./dotfiles/nvim/lua/config/lazy.lua;
     "nvim/lua/plugins/lsp.lua".source              = ./dotfiles/nvim/lua/plugins/lsp.lua;
     "nvim/lua/plugins/treesitter.lua".source       = ./dotfiles/nvim/lua/plugins/treesitter.lua;
+    "starship/starship.toml".source               = ./dotfiles/starship/starship.toml;
   };
 
-  services.walker = {
+programs.starship = {
+  enable = true;
+  enableBashIntegration = true; # Automatically hooks into your Bash shell
+};
+
+  programs.rofi = {
     enable = true;
-    systemd.enable = true;
-    theme = {
-      name = "catppuccin-mocha";
-      style = ''
-        * {
-          all: unset;
-          font-family: "SauceCodePro Nerd Font", monospace;
-        }
-
-        #walker {
-          background: rgba(30, 30, 46, 0.95);
-          border: 1px solid #313244;
-          border-radius: 12px;
-          padding: 8px;
-          min-width: 500px;
-        }
-
-        #search {
-          background: #181825;
-          color: #cdd6f4;
-          caret-color: #cba6f7;
-          border-radius: 8px;
-          padding: 10px 14px;
-          margin-bottom: 8px;
-          font-size: 16px;
-          border: 1px solid #313244;
-        }
-
-        #search:focus {
-          border-color: #cba6f7;
-        }
-
-        listview {
-          background: transparent;
-        }
-
-        row {
-          border-radius: 8px;
-          padding: 6px 10px;
-          margin: 1px 0;
-        }
-
-        row:selected {
-          background: #313244;
-        }
-
-        row image {
-          margin-right: 10px;
-        }
-
-        .name {
-          color: #cdd6f4;
-          font-size: 14px;
-        }
-
-        .description {
-          color: #6c7086;
-          font-size: 12px;
-        }
-
-        .activatable:hover {
-          background: #313244;
-          border-radius: 8px;
-        }
-      '';
-    };
+    package = pkgs.rofi;
   };
 
   programs.neovim = {

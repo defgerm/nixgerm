@@ -12,7 +12,7 @@ hl.monitor({
     output   = "",
     mode     = "preferred",
     position = "auto",
-    scale    = "1.2",
+    scale    = "1",
 })
 
 
@@ -23,7 +23,7 @@ hl.monitor({
 local terminal    = "kitty"
 local browser     = "chromium"
 local fileManager = "nautilus"
-local menu        = "walker"
+local menu        = "rofi -show drun"
 
 
 -------------------
@@ -68,7 +68,7 @@ hl.config({
 
     decoration = {
         rounding       = 10,
-        rounding_power = 0,
+        rounding_power = 1,
 
         active_opacity   = 1,
         inactive_opacity = 0.9,
@@ -81,9 +81,9 @@ hl.config({
         },
 
         blur = {
-            enabled  = false,
-            size     = 3,
-            passes   = 1,
+            enabled  = true,
+            size     = 5,
+            passes   = 4,
             vibrancy = 0.1696,
         },
     },
