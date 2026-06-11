@@ -43,7 +43,7 @@
     "nvim/lua/config/lazy.lua".source        = ./dotfiles/nvim/lua/config/lazy.lua;
     "nvim/lua/plugins/lsp.lua".source              = ./dotfiles/nvim/lua/plugins/lsp.lua;
     "nvim/lua/plugins/treesitter.lua".source       = ./dotfiles/nvim/lua/plugins/treesitter.lua;
-    "starship/starship.toml".source               = ./dotfiles/starship/starship.toml;
+    "starship.toml".source                        = ./dotfiles/starship/starship.toml;
   };
 
 programs.starship = {
@@ -77,7 +77,6 @@ home.pointerCursor = {
   programs.bash.enable = true;
 
   programs.bash.initExtra = ''
-    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
   '';
 
   programs.bash.profileExtra = ''

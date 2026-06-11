@@ -68,7 +68,7 @@ hl.config({
 
     decoration = {
         rounding       = 10,
-        rounding_power = 1,
+        rounding_power = 2,
 
         active_opacity   = 1,
         inactive_opacity = 0.9,
@@ -178,7 +178,7 @@ local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + L",      hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("kitty -e sudo nixos-rebuild switch --flake /etc/nixos#nixos"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("kitty --hold --class nixos-rebuild -e sudo nixos-rebuild switch --flake /etc/nixos#nixos"))
 hl.bind(mainMod .. " + W",      hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + RETURN",      hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SHIFT + F",      hl.dsp.exec_cmd(fileManager))
@@ -223,6 +223,14 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),    { locked = t
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
+
+hl.window_rule({
+    name   = "nixos-rebuild-float-center",
+    match  = { class = "nixos-rebuild" },
+    float  = true,
+    center = true,
+    size   = { 900, 600 },
+})
 
 hl.window_rule({
     name  = "suppress-maximize-events",
