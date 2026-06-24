@@ -179,6 +179,7 @@ local mainMod = "SUPER"
 hl.bind(mainMod .. " + L",      hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("kitty --hold --class nixos-rebuild -e sudo nixos-rebuild switch --flake /etc/nixos#nixos"))
+hl.bind(mainMod .. " + SHIFT + I", hl.dsp.exec_cmd("kitty --hold --class nixos-rebuild -e sudo impala"))
 hl.bind(mainMod .. " + W",      hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + RETURN",      hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SHIFT + F",      hl.dsp.exec_cmd(fileManager))

@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     wget
+    vscode
     htop
     btop
     yazi
@@ -31,6 +32,7 @@
     fd
     nodejs
     lua-language-server
+    python3
   ];
 
   xdg.configFile = {
@@ -58,9 +60,6 @@ programs.starship = {
 
   programs.neovim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars
-    ];
   };
 
 home.pointerCursor = {
